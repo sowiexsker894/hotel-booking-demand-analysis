@@ -584,6 +584,103 @@ boxplot(dataset_clean$adr, main = "Diagrama de Caja - ADR")
 ```
 ### Visualizacion de datos 
 
+#PREGUNTA 1
+```R
+hotel_count <- hotel_data %>%
+  group_by(hotel) %>%
+  summarise(count = n())
+
+ggplot(hotel_count, aes(x = hotel, y = count, fill = hotel)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Numeros de booking por tipo de hotel", x = "tipo de hotel", y = "Numeros de booking") +
+  theme_minimal()
+```
+#PREGUNTA 2
+```R
+# Convertir el nombre del mes a número, si es necesario
+hotel_data$arrival_date_month <- match(hotel_data$arrival_date_month, month.name)
+
+# Crear la columna 'year_month' combinando año y mes
+hotel_data$year_month <- make_date(hotel_data$arrival_date_year, hotel_data$arrival_date_month, 1)
+
+# Verifica la creación de la columna year_month
+head(hotel_data$year_month)
+
+# Agrupar por year_month y contar el número de reservas
+demand_over_time <- hotel_data %>%
+  group_by(year_month) %>%
+  summarise(count = n())
+
+# Visualización: gráfico de línea de demanda a lo largo del tiempo
+ggplot(demand_over_time, aes(x = year_month, y = count)) +
+  geom_line(color = "blue") +
+  labs(title = "Demanda de Reservas a lo Largo del Tiempo", x = "Fecha", y = "Número de Reservas") +
+  theme_minimal()
+```
+
+#PREGUNTA 3
+```R
+seasonality <- hotel_data %>%
+  group_by(arrival_date_month) %>%
+  summarise(count = n()) %>%
+  arrange(match(arrival_date_month, month.name))
+
+
+ggplot(seasonality, aes(x = factor(arrival_date_month, levels = month.name), y = count, fill = count)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Temporada de Reserva", x = "Mes", y = "Number of Bookings") +
+  theme_minimal()
+```
+
+#PREGUNTA 4
+```R
+lowest_demand_month <- seasonality[which.min(seasonality$count), ]
+lowest_demand_month
+```
+
+#PREGUNTA 5
+```R
+children_bookings <- hotel_data %>%
+  filter(children > 0 | babies > 0)
+
+nrow(children_bookings)
+
+ggplot(children_bookings, aes(x = factor(children > 0, levels = c(TRUE, FALSE)), fill = babies > 0)) +
+  geom_bar() +
+  labs(title = "Bookings with Children and/or Babies", x = "Children Present", y = "Number of Bookings") +
+  theme_minimal()
+```
+
+#PREGUNTA 6
+```R
+parking_spaces <- hotel_data %>%
+  group_by(required_car_parking_spaces) %>%
+  summarise(count = n())
+
+ggplot(parking_spaces, aes(x = required_car_parking_spaces, y = count, fill = required_car_parking_spaces)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Importance of Parking Spaces", x = "Number of Parking Spaces", y = "Number of Bookings") +
+  theme_minimal()
+```
+
+#PREGUNTA 7
+```R
+hotel_data$arrival_date_month <- match(hotel_data$arrival_date_month, month.name)
+
+hotel_data$year_month <- make_date(hotel_data$arrival_date_year, hotel_data$arrival_date_month, 1)
+
+cancellations <- hotel_data %>%
+  filter(is_canceled == 1) %>%
+  group_by(year_month) %>%
+  summarise(cancel_count = n())
+
+ggplot(cancellations, aes(x = year_month, y = cancel_count)) +
+  geom_bar(stat = "identity", fill = "red") +
+  labs(title = "Cancelaciones Mensuales", x = "Mes", y = "Número de Cancelaciones") +
+  theme_minimal()
+
+```
+
 ## 7. Conclusiones <a name="data7"></a>
 A partir de los datos de reservas por tipo de hotel, podemos concluir que los hoteles urbanos (City hotels) tienden a ser más populares que los resorts. Esto podría deberse a varios factores, como la ubicación céntrica,
 
