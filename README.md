@@ -1,302 +1,186 @@
-# CC216--TP-2024-2-
-Análisis EDA: Hotel booking demand . La investigación presenta dos conjuntos de datos sobre la demanda de reservas hoteleras, uno correspondiente a un hotel de tipo resort (H1) y otro a un hotel urbano (H2) .
+# 🏨 Hotel Booking Demand Analysis - EDA Report
 
-## Contenidos
+> **A comprehensive exploratory data analysis of hotel booking demand patterns**
 
-1. [INTRODUCCIÓN](#data1)
+---
 
-2. [OBJETIVOS](#data2)
+## 📋 Table of Contents
 
-3. [CONJUNTO DE DATOS](#data3)
-        
-4. [CASO DE ANÁLISIS](#data4)
-    
-5. [DATASET](#data5)
+1. [🎯 Introduction](#introduction)
+2. [🎯 Objectives](#objectives)
+3. [📊 Dataset Overview](#dataset-overview)
+4. [🔍 Case Study Analysis](#case-study-analysis)
+5. [📝 Dataset Variables](#dataset-variables)
+6. [📈 Exploratory Data Analysis](#exploratory-data-analysis)
+7. [📊 Conclusions](#conclusions)
+8. [💡 Recommendations](#recommendations)
+9. [📚 Bibliography](#bibliography)
 
-6. [ANÁLISIS EXPLORATORIO DE DATOS](#data6)
+---
 
-7. [CONCLUSIONES](#data7)
-   
-8. [RECOMENDACIONES](#data8)
-    
-9. [CONCLUSIONES](#data9)
+## 🎯 Introduction {#introduction}
 
-## 1. Introducción <a name="data1"></a>
-
-<center><p style="text-align: justify;">
-El artículo titulado "<strong>Hotel Booking Demand Datasets</strong>", escrito por Antonio Nuno de Almeida, Ana Nunes y Luis, aborda la importancia y la utilidad de los conjuntos de datos relacionados con la demanda de reservas hoteleras. Publicado el 2 de enero de 2019, 
-este trabajo se enmarca dentro de un contexto multidisciplinario que combina aspectos de análisis de datos, gestión hotelera y técnicas de aprendizaje automático.</center></p>
-
-<p style="text-align: justify;">
-La investigación se centra en la recopilación y análisis de datos sobre reservas hoteleras, 
-lo que permite a los investigadores y profesionales del sector comprender mejor los patrones de comportamiento de los consumidores. A través del uso de estos conjuntos de datos, se pueden desarrollar modelos predictivos que ayudan a anticipar la demanda, optimizar la gestión de ingresos y mejorar la experiencia del cliente. Este enfoque no solo beneficia a los hoteles en términos de eficiencia operativa, sino que también contribuye a una toma de decisiones más informada basada en datos concretos.
-</p>
-
-<img src="best-hotel-booking-form-wordpress-plugins.jpg" alt="Reservas Hotel" style="width: 700px;"/>
-<center>Figura 1: Reservas de Hotel</center>
-
-<p></p>
-
-En resumen, el trabajo destaca la relevancia de los datasets sobre demanda hotelera como herramientas clave para el análisis y la mejora continua en la industria del turismo.
-
-## 2. Objetivos <a name="data2"></a>
-
-### Generales:
-- Realizar un análisis exploratorio de un conjunto de datos (EDA), generando visualizaciones, preparando los datos y extrayendo conclusiones iniciales utilizando R/RStudio como herramienta de software.
-- Explorar diferentes aspectos del comportamiento del consumidor en el sector hotelero.
-
-### Específicos:
-- Desarrollar modelos de predicción para clasificar la probabilidad de cancelación de una reserva hotelera.
-
-## 3. Conjunto de Datos <a name="data3"></a>
-
-Se cuenta con un total de **119,390** datos y **32 variables** que provienen de la plataforma ScienceDirect, una fuente de bibliografía académica revisada por pares de Elsevier. El artículo describe dos conjuntos de datos de la demanda de hoteles: uno de un hotel resort ("**Resort Hotel**") y otro de un hotel urbano ("**City Hotel**"). Ambos conjuntos de datos comprenden reservas entre el 1 de julio de 2015 y el 31 de agosto de 2017.
-
-<img src="datasets.jpg" alt="Datasets" style="width: 700px;"/>
-<center>Figura 2: Datasets de Hoteles</center>
-
-## 4. Caso de Análisis <a name="data4"></a>
-
-### Origen de los Datos:
-- **Autores**: Antonio Nuno de Almeida, Ana Nunes y Luis.
-- **Fecha de publicación**: 2 de enero de 2019.
-- **Fuente**: ScienceDirect.
-- **Instituto**: Instituto Universitario de Lisboa en Portugal.
-
-### Credibilidad de los Datos:
-Los datos provienen de consultas realizadas al sistema de gestión de propiedades (PMS) de los hoteles, almacenados en formato SQL de registros administrativos anteriores, lo que garantiza su confiabilidad.
-
-### Casos de Uso Aplicables:
-- **Cadenas hoteleras**: Optimización de cartera, mejora de la satisfacción del cliente, expansión de mercado.
-- **Propietarios de hoteles independientes**: Oportunidades de nicho, diferenciación de servicios.
-- **Investigadores académicos**: Estudios sobre el comportamiento del consumidor en el turismo y la gestión hotelera.
-- **Organismos turísticos**: Comprensión del flujo turístico y desarrollo de políticas.
-
-### Problemas o Necesidades que Responde el Análisis:
-
-- **Mejorar la rentabilidad de los hoteles** mediante estrategias de precios dinámicos y promociones en temporadas bajas.
-- **Mejorar la experiencia del cliente** con servicios personalizados para clientes recurrentes.
-- **Optimizar la fluctuación de ingresos** con estrategias de marketing adecuadas a los periodos de menor actividad.
-
-
-### Insights:
-
-- La baja o la alta tasa de cancelaciones antes de tiempo podría significar un problema para el 
-  negocio de los hoteles , algunas hipótesis podrían ser los cambios climáticos, las temporadas 
-  altas de vacaciones, políticas de cancelaciones muy flexibles (factores que influyen en las 
-  cancelaciones )
-
-- El hotel debería implementar una estrategia de precios dinámica que tenga en cuenta tanto la 
-  estacionalidad como el tipo de habitación, brindando descuentos o paquetes especiales en 
-  temporadas altas a las habitaciones menos visitadas o invertir en aquellas con menos visitas.
-
-- La estacionalidad está relacionado tanto por los tipos de habitación y por las temporadas , 
-  asi que podriamos analizar y alzar los precios en las temporadas altas 
-
-- Debido a la existencia de clientes nuevos y repetidos , se podría crear un servicio especial 
-  para los clientes repetidos , accesos premium a eventos dentro del hotel, cupones o créditos 
-  por visita y así poder aumentar la demanda de personas que visitan cada año.//(Por cada 100 
-  personas cuántas son recurrentes)
+<div align="center">
   
-Preguntas Clave para el Análisis <a name="questions"></a>
+![Hotel Booking Analysis](https://via.placeholder.com/600x300/4A90E2/FFFFFF?text=Hotel+Booking+Analysis)
 
-- ¿Cuántas reservas se realizan por tipo de hotel?
-- ¿Está aumentando la demanda con el tiempo?
-- ¿Cuáles son las temporadas de alta y baja demanda?
-- ¿Cuántas reservas incluyen niños y/o bebés?
-- ¿Es importante contar con espacios de estacionamiento?
-- ¿En qué meses del año se producen más cancelaciones de reservas?
+</div>
 
-## 5. Dataset <a name="data5"></a>
-Proporcionamos una tabla que describe las diferentes variables contenidas en el conjunto de datos y las define según su tipo y una breve descripción:
+The article titled **"Hotel Booking Demand Datasets"**, authored by Antonio Nuno de Almeida, Ana Nunes, and Luis, addresses the importance and utility of datasets related to hotel booking demand. Published on January 2, 2019, this work operates within a multidisciplinary context that combines aspects of data analysis, hotel management, and machine learning techniques.
 
-<table>
-  <thead>
-    <tr>
-      <th>Variable</th>
-      <th>Tipo</th>
-      <th>Descripción</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>hotel</td>
-      <td>Categórico</td>
-      <td>Tipo de Hotel (Resort - City)</td>
-    </tr>
-    <tr>
-      <td>is_canceled</td>
-      <td>Numérico</td>
-      <td>Indica si la reserva fue cancelada (1 Sí / 0 No)</td>
-    </tr>
-    <tr>
-      <td>lead_time</td>
-      <td>Numérico</td>
-      <td>Días entre la reserva y la llegada</td>
-    </tr>
-    <tr>
-      <td>arrival_date_year</td>
-      <td>Numérico</td>
-      <td>Año de la fecha de llegada</td>
-    </tr>
-    <tr>
-      <td>arrival_date_month</td>
-      <td>Categórico</td>
-      <td>Mes de la fecha de llegada</td>
-    </tr>
-    <tr>
-      <td>arrival_date_week_number</td>
-      <td>Numérico</td>
-      <td>Número de la semana del año de la llegada</td>
-    </tr>
-    <tr>
-      <td>arrival_date_day_of_month</td>
-      <td>Numérico</td>
-      <td>Día del mes de la llegada</td>
-    </tr>
-    <tr>
-      <td>stays_in_weekend_nights</td>
-      <td>Numérico</td>
-      <td>Número de noches de estancia en el fin de semana</td>
-    </tr>
-    <tr>
-      <td>stays_in_week_nights</td>
-      <td>Numérico</td>
-      <td>Número de noches de estancia durante la semana</td>
-    </tr>
-    <tr>
-      <td>adults</td>
-      <td>Numérico</td>
-      <td>Número de adultos incluidos en la reserva</td>
-    </tr>
-    <tr>
-      <td>children</td>
-      <td>Numérico</td>
-      <td>Número de niños incluidos en la reserva</td>
-    </tr>
-    <tr>
-      <td>babies</td>
-      <td>Numérico</td>
-      <td>Número de bebés incluidos en la reserva</td>
-    </tr>
-    <tr>
-      <td>meal</td>
-      <td>Categórico</td>
-      <td>Tipo de comida reservado</td>
-    </tr>
-    <tr>
-      <td>country</td>
-      <td>Categórico</td>
-      <td>País del cliente</td>
-    </tr>
-    <tr>
-      <td>market_segment</td>
-      <td>Categórico</td>
-      <td>Segmento de mercado al que pertenece la reserva</td>
-    </tr>
-    <tr>
-      <td>distribution_channel</td>
-      <td>Categórico</td>
-      <td>Canal de distribución de la reserva</td>
-    </tr>
-    <tr>
-      <td>is_repeated_guest</td>
-      <td>Numérico</td>
-      <td>Indica si es un huésped recurrente</td>
-    </tr>
-    <tr>
-      <td>previous_cancellations</td>
-      <td>Numérico</td>
-      <td>Número de reservas anteriores canceladas</td>
-    </tr>
-    <tr>
-      <td>reserved_room_type</td>
-      <td>Categórico</td>
-      <td>Tipo de habitación reservada</td>
-    </tr>
-    <tr>
-      <td>assigned_room_type</td>
-      <td>Categórico</td>
-      <td>Tipo de habitación asignada</td>
-    </tr>
-    <tr>
-      <td>booking_changes</td>
-      <td>Numérico</td>
-      <td>Número de cambios en la reserva</td>
-    </tr>
-    <tr>
-      <td>deposit_type</td>
-      <td>Categórico</td>
-      <td>Tipo de depósito (No Deposit, Non Refund, Refundable)</td>
-    </tr>
-    <tr>
-      <td>agent</td>
-      <td>Numérico</td>
-      <td>ID del agente que gestionó la reserva</td>
-    </tr>
-    <tr>
-      <td>company</td>
-      <td>Numérico</td>
-      <td>ID de la compañía que gestionó la reserva</td>
-    </tr>
-    <tr>
-      <td>days_in_waiting_list</td>
-      <td>Numérico</td>
-      <td>Días en la lista de espera</td>
-    </tr>
-    <tr>
-      <td>customer_type</td>
-      <td>Categórico</td>
-      <td>Tipo de cliente</td>
-    </tr>
-    <tr>
-      <td>adr</td>
-      <td>Numérico</td>
-      <td>Tarifa Diaria Promedio</td>
-    </tr>
-    <tr>
-      <td>required_car_parking_spaces</td>
-      <td>Numérico</td>
-      <td>Número de espacios de aparcamiento requeridos</td>
-    </tr>
-    <tr>
-      <td>total_of_special_requests</td>
-      <td>Numérico</td>
-      <td>Número de solicitudes especiales</td>
-    </tr>
-    <tr>
-      <td>reservation_status</td>
-      <td>Categórico</td>
-      <td>Estado de la reserva (Check-Out, Canceled, No-Show)</td>
-    </tr>
-    <tr>
-      <td>reservation_status_date</td>
-      <td>Fecha</td>
-      <td>Fecha del estado de la reserva</td>
-    </tr>
-  </tbody>
-</table>
+The research focuses on collecting and analyzing hotel booking data, enabling researchers and industry professionals to better understand consumer behavior patterns. Through the use of these datasets, predictive models can be developed to help anticipate demand, optimize revenue management, and improve customer experience. This approach not only benefits hotels in terms of operational efficiency but also contributes to more informed decision-making based on concrete data.
 
-## 6. Análisis exploratorio de datos <a name="data6"></a>
+> 💡 **Key Insight**: The work highlights the relevance of hotel demand datasets as key tools for analysis and continuous improvement in the tourism industry.
 
-### Cargar Datos:
+---
+
+## 🎯 Objectives {#objectives}
+
+### 🌟 General Objectives
+- **📊 Conduct comprehensive EDA**: Perform exploratory data analysis of the dataset, generating visualizations, preparing data, and extracting initial conclusions using R/RStudio
+- **🔍 Explore consumer behavior**: Investigate different aspects of consumer behavior in the hotel sector
+
+### 🎯 Specific Objectives
+- **🤖 Develop prediction models**: Create models to classify the probability of hotel booking cancellations
+
+---
+
+## 📊 Dataset Overview {#dataset-overview}
+
+<div align="center">
+
+### 📈 Dataset Statistics
+
+| Metric | Value |
+|--------|--------|
+| 📝 **Total Records** | 119,390 |
+| 📋 **Variables** | 32 |
+| 🏨 **Hotel Types** | Resort & City Hotels |
+| 📅 **Time Period** | July 1, 2015 - August 31, 2017 |
+
+</div>
+
+The dataset contains **119,390 records** and **32 variables** sourced from ScienceDirect, a peer-reviewed academic bibliography platform by Elsevier. The article describes two hotel demand datasets: one from a resort hotel (**"Resort Hotel"**) and another from an urban hotel (**"City Hotel"**).
+
+<div align="center">
+  
+![Dataset Overview](https://via.placeholder.com/600x200/FF6B6B/FFFFFF?text=Hotel+Datasets+Overview)
+
+</div>
+
+---
+
+## 🔍 Case Study Analysis {#case-study-analysis}
+
+### 📚 Data Origin
+- **👥 Authors**: Antonio Nuno de Almeida, Ana Nunes, and Luis
+- **📅 Publication Date**: January 2, 2019
+- **🔗 Source**: ScienceDirect
+- **🏛️ Institution**: University Institute of Lisbon, Portugal
+
+### ✅ Data Credibility
+The data originates from queries made to the hotels' Property Management System (PMS), stored in SQL format from previous administrative records, ensuring reliability.
+
+### 🎯 Applicable Use Cases
+
+| Stakeholder | Application |
+|-------------|-------------|
+| 🏨 **Hotel Chains** | Portfolio optimization, customer satisfaction improvement, market expansion |
+| 🏠 **Independent Hotels** | Niche opportunities, service differentiation |
+| 🎓 **Academic Researchers** | Consumer behavior studies in tourism and hotel management |
+| 🌍 **Tourism Organizations** | Understanding tourist flow and policy development |
+
+### 💼 Business Problems Addressed
+
+- **💰 Improve hotel profitability** through dynamic pricing strategies and promotions during low seasons
+- **😊 Enhance customer experience** with personalized services for returning customers  
+- **📊 Optimize revenue fluctuation** with appropriate marketing strategies for low-activity periods
+
+### 💡 Key Insights
+
+> 🔍 **Cancellation Patterns**: High or low cancellation rates could indicate business problems. Potential factors include climate changes, high vacation seasons, overly flexible cancellation policies.
+
+> 💲 **Dynamic Pricing Strategy**: Hotels should implement pricing strategies considering both seasonality and room type, offering discounts or special packages during high seasons for less visited rooms.
+
+> 📈 **Seasonality Analysis**: Seasonality relates to both room types and seasons, allowing for price increases during high-demand periods.
+
+> 🌟 **Customer Loyalty**: Due to the existence of new and repeat customers, special services could be created for returning guests - premium access to hotel events, coupons, or visit credits.
+
+### ❓ Key Analysis Questions
+
+- 🏨 How many bookings are made by hotel type?
+- 📈 Is demand increasing over time?
+- 🌡️ What are the high and low demand seasons?
+- 👶 How many bookings include children and/or babies?
+- 🚗 Is parking space availability important?
+- 📅 In which months are most booking cancellations made?
+
+---
+
+## 📝 Dataset Variables {#dataset-variables}
+
+<div align="center">
+
+### 📊 Variable Dictionary
+
+</div>
+
+| Variable | Type | Description |
+|----------|------|-------------|
+| 🏨 `hotel` | Categorical | Hotel Type (Resort - City) |
+| ❌ `is_canceled` | Numeric | Indicates if booking was canceled (1 Yes / 0 No) |
+| ⏰ `lead_time` | Numeric | Days between booking and arrival |
+| 📅 `arrival_date_year` | Numeric | Year of arrival date |
+| 📆 `arrival_date_month` | Categorical | Month of arrival date |
+| 📊 `arrival_date_week_number` | Numeric | Week number of arrival year |
+| 📋 `arrival_date_day_of_month` | Numeric | Day of month of arrival |
+| 🌙 `stays_in_weekend_nights` | Numeric | Number of weekend nights stayed |
+| 🌞 `stays_in_week_nights` | Numeric | Number of weekday nights stayed |
+| 👨‍👩‍👧‍👦 `adults` | Numeric | Number of adults in booking |
+| 👶 `children` | Numeric | Number of children in booking |
+| 🍼 `babies` | Numeric | Number of babies in booking |
+| 🍽️ `meal` | Categorical | Type of meal booked |
+| 🌍 `country` | Categorical | Customer's country |
+| 📈 `market_segment` | Categorical | Market segment of booking |
+| 📡 `distribution_channel` | Categorical | Booking distribution channel |
+| 🔄 `is_repeated_guest` | Numeric | Indicates if returning guest |
+| ❌ `previous_cancellations` | Numeric | Number of previous canceled bookings |
+| 🏠 `reserved_room_type` | Categorical | Reserved room type |
+| 🏠 `assigned_room_type` | Categorical | Assigned room type |
+| 🔄 `booking_changes` | Numeric | Number of booking changes |
+| 💰 `deposit_type` | Categorical | Deposit type (No Deposit, Non Refund, Refundable) |
+| 👤 `agent` | Numeric | ID of booking agent |
+| 🏢 `company` | Numeric | ID of managing company |
+| ⏳ `days_in_waiting_list` | Numeric | Days on waiting list |
+| 👥 `customer_type` | Categorical | Customer type |
+| 💵 `adr` | Numeric | Average Daily Rate |
+| 🚗 `required_car_parking_spaces` | Numeric | Number of required parking spaces |
+| ⭐ `total_of_special_requests` | Numeric | Number of special requests |
+| 📋 `reservation_status` | Categorical | Reservation status (Check-Out, Canceled, No-Show) |
+| 📅 `reservation_status_date` | Date | Reservation status date |
+
+---
+
+## 📈 Exploratory Data Analysis {#exploratory-data-analysis}
+
+### 🔧 Data Loading
 ```R
 setwd("C:/Users/Usuario/OneDrive - Universidad Peruana de Ciencias/DATA SCIENCE")
 
 datahotel <- read.csv("hotel_bookings.csv",header=T,sep = ",")
 ```
 
-### Inspeccionar  Datos: 
+### 🔍 Data Inspection
 
-filas y columnas del dataset
-dim(datahotel)
+#### Dataset dimensions
 ```R
 dim(datahotel)
 ```
-                    [1] 119390     32
+```
+[1] 119390     32
+```
 
-
-lista de los nombres de las columnas 
+#### Column names
 ```R
 colnames(datahotel)
 [1] "hotel"                         
@@ -332,9 +216,8 @@ colnames(datahotel)
 [31] "reservation_status"            
 [32] "reservation_status_date" 
 ```
-                   
 
-estructura general del conjunto de datos
+#### Dataset structure
 ```R
 str(datahotel)
 'data.frame':	119390 obs. of  32 variables:
@@ -372,93 +255,9 @@ str(datahotel)
  $ reservation_status_date       : chr  "2015-07-01" "2015-07-01" "2015-07-02" "2015-07-02" ...
 ```
 
-visualizar los primeros registros de datos
-```R
-head(datahotel)
-         hotel is_canceled lead_time arrival_date_year
-1 Resort Hotel           0       342              2015
-2 Resort Hotel           0       737              2015
-3 Resort Hotel           0         7              2015
-4 Resort Hotel           0        13              2015
-5 Resort Hotel           0        14              2015
-6 Resort Hotel           0        14              2015
-  arrival_date_month arrival_date_week_number
-1               July                       27
-2               July                       27
-3               July                       27
-4               July                       27
-5               July                       27
-6               July                       27
-  arrival_date_day_of_month stays_in_weekend_nights
-1                         1                       0
-2                         1                       0
-3                         1                       0
-4                         1                       0
-5                         1                       0
-6                         1                       0
-  stays_in_week_nights adults children babies meal country
-1                    0      2        0      0   BB     PRT
-2                    0      2        0      0   BB     PRT
-3                    1      1        0      0   BB     GBR
-4                    1      1        0      0   BB     GBR
-5                    2      2        0      0   BB     GBR
-6                    2      2        0      0   BB     GBR
-  market_segment distribution_channel is_repeated_guest
-1         Direct               Direct                 0
-2         Direct               Direct                 0
-3         Direct               Direct                 0
-4      Corporate            Corporate                 0
-5      Online TA                TA/TO                 0
-6      Online TA                TA/TO                 0
-  previous_cancellations previous_bookings_not_canceled
-1                      0                              0
-2                      0                              0
-3                      0                              0
-4                      0                              0
-5                      0                              0
-6                      0                              0
-  reserved_room_type assigned_room_type booking_changes
-1                  C                  C               3
-2                  C                  C               4
-3                  A                  C               0
-4                  A                  A               0
-5                  A                  A               0
-6                  A                  A               0
-  deposit_type agent company days_in_waiting_list
-1   No Deposit  NULL    NULL                    0
-2   No Deposit  NULL    NULL                    0
-3   No Deposit  NULL    NULL                    0
-4   No Deposit   304    NULL                    0
-5   No Deposit   240    NULL                    0
-6   No Deposit   240    NULL                    0
-  customer_type adr required_car_parking_spaces
-1     Transient   0                           0
-2     Transient   0                           0
-3     Transient  75                           0
-4     Transient  75                           0
-5     Transient  98                           0
-6     Transient  98                           0
-  total_of_special_requests reservation_status
-1                         0          Check-Out
-2                         0          Check-Out
-3                         0          Check-Out
-4                         0          Check-Out
-5                         1          Check-Out
-6                         1          Check-Out
-  reservation_status_date
-1              2015-07-01
-2              2015-07-01
-3              2015-07-02
-4              2015-07-02
-5              2015-07-03
-6              2015-07-03
-```
+### 🧹 Data Processing
 
-### Procesamiento de Datos:
-
-Identificación de Datos Faltantes:Proceso para identificar valores NA en el conjunto de datos.
-Identificar la cantidad de valores NA en cada columna
-
+#### Missing Data Identification
 ```R
 colSums(is.na(hotel_data))
                          hotel                    is_canceled 
@@ -494,97 +293,62 @@ previous_bookings_not_canceled             reserved_room_type
             reservation_status        reservation_status_date 
                              0                              0
 ```
-Tratamiento de Datos Faltantes:Técnica utilizada para eliminar o completar datos faltantes (p. ej., imputación, eliminación).
 
+#### Missing Data Treatment
 ```R
-#Creamos una dataset de ayuda “dataset_clean”
+# Create helper dataset "dataset_clean"
 dataset_clean <- na.omit(hotel_data)
-# Eliminar columnas con más de un 50% de valores NA
+# Remove columns with more than 50% NA values
 dataset_clean <- hotel_data[, colMeans(is.na(hotel_data)) < 0.5]
 View(dataset_clean)
-
 ```
-Identificación de Datos Atípicos (Outliers):Procedimiento para detectar valores atípicos, como diagramas de caja (boxplots).
 
+#### Outlier Identification
 ```R
-# Crear un boxplot para visualizar outliers
-boxplot(dataset_clean$adr, main = "Diagrama de Caja - ADR")
+# Create boxplot to visualize outliers
+boxplot(dataset_clean$adr, main = "Box Plot - ADR")
 
-# Identificar outliers usando el rango intercuartil (IQR)
+# Identify outliers using Interquartile Range (IQR)
 Q1 <- quantile(dataset_clean$adr, 0.25, na.rm = TRUE)
 Q3 <- quantile(dataset_clean$adr, 0.75, na.rm = TRUE)
 IQR <- Q3 - Q1
 
-# Definir límites
+# Define limits
 lower_bound <- Q1 - 1.5 * IQR
 upper_bound <- Q3 + 1.5 * IQR
 outliers <- dataset_clean$adr[dataset_clean$adr < lower_bound | dataset_clean$adr > upper_bound]
-
 ```
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-</head>
-<body>
-    <table>
-        <thead>
-            <tr>
-                <th>Estadística</th>
-                <th>Valor</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>IQR</td>
-                <td>Named num 56.7</td>
-            </tr>
-            <tr>
-                <td>lower_b</td>
-                <td>Named num -15.8</td>
-            </tr>
-            <tr>
-                <td>outliers</td>
-                <td>num [1:3793] 225 21 ...</td>
-            </tr>
-            <tr>
-                <td>Q1</td>
-                <td>Named num 69.3</td>
-            </tr>
-            <tr>
-                <td>Q3</td>
-                <td>Named num 126</td>
-            </tr>
-            <tr>
-                <td>upper_b</td>
-                <td>Named num 211</td>
-            </tr>
-        </tbody>
-    </table>
-</body>
-</html>
 
-Tratamiento de Datos Atípicos:Técnica(s) para transformar o manejar los valores atípicos (p. ej., winsorización, eliminación de outliers).
+| Statistic | Value |
+|-----------|--------|
+| **IQR** | 56.7 |
+| **Lower Bound** | -15.8 |
+| **Upper Bound** | 211 |
+| **Q1** | 69.3 |
+| **Q3** | 126 |
+| **Outliers Count** | 3,793 |
 
+#### Outlier Treatment
 ```R
-# Winsorización de datos para limitar outliers
+# Winsorization to limit outliers
 install.packages("DescTools")
 library(DescTools)
 
-# Calcular los percentiles 5% y 95%
+# Calculate 5th and 95th percentiles
 lower_bound <- quantile(dataset_clean$adr, 0.05, na.rm = TRUE)
 upper_bound <- quantile(dataset_clean$adr, 0.95, na.rm = TRUE)
 
-# Winsorizar manualmente reemplazando valores fuera de los límites
+# Manual winsorization by replacing values outside limits
 dataset_clean$adr[dataset_clean$adr < lower_bound] <- lower_bound
 dataset_clean$adr[dataset_clean$adr > upper_bound] <- upper_bound
-#Volvemos a ejecutar el BoxPlot
-boxplot(dataset_clean$adr, main = "Diagrama de Caja - ADR")
 
+# Re-run BoxPlot
+boxplot(dataset_clean$adr, main = "Box Plot - ADR (After Winsorization)")
 ```
-### Visualizacion de datos 
 
-#PREGUNTA 1
+### 📊 Data Visualization
+
+#### 🏨 Question 1: Bookings by Hotel Type
 ```R
 hotel_count <- hotel_data %>%
   group_by(hotel) %>%
@@ -592,53 +356,53 @@ hotel_count <- hotel_data %>%
 
 ggplot(hotel_count, aes(x = hotel, y = count, fill = hotel)) +
   geom_bar(stat = "identity") +
-  labs(title = "Numeros de booking por tipo de hotel", x = "tipo de hotel", y = "Numeros de booking") +
+  labs(title = "Number of Bookings by Hotel Type", x = "Hotel Type", y = "Number of Bookings") +
   theme_minimal()
 ```
-#PREGUNTA 2
+
+#### 📈 Question 2: Demand Over Time
 ```R
-# Convertir el nombre del mes a número, si es necesario
+# Convert month name to number if necessary
 hotel_data$arrival_date_month <- match(hotel_data$arrival_date_month, month.name)
 
-# Crear la columna 'year_month' combinando año y mes
+# Create 'year_month' column combining year and month
 hotel_data$year_month <- make_date(hotel_data$arrival_date_year, hotel_data$arrival_date_month, 1)
 
-# Verifica la creación de la columna year_month
+# Verify year_month column creation
 head(hotel_data$year_month)
 
-# Agrupar por year_month y contar el número de reservas
+# Group by year_month and count bookings
 demand_over_time <- hotel_data %>%
   group_by(year_month) %>%
   summarise(count = n())
 
-# Visualización: gráfico de línea de demanda a lo largo del tiempo
+# Visualization: line chart of demand over time
 ggplot(demand_over_time, aes(x = year_month, y = count)) +
   geom_line(color = "blue") +
-  labs(title = "Demanda de Reservas a lo Largo del Tiempo", x = "Fecha", y = "Número de Reservas") +
+  labs(title = "Booking Demand Over Time", x = "Date", y = "Number of Bookings") +
   theme_minimal()
 ```
 
-#PREGUNTA 3
+#### 🌡️ Question 3: Seasonal Patterns
 ```R
 seasonality <- hotel_data %>%
   group_by(arrival_date_month) %>%
   summarise(count = n()) %>%
   arrange(match(arrival_date_month, month.name))
 
-
 ggplot(seasonality, aes(x = factor(arrival_date_month, levels = month.name), y = count, fill = count)) +
   geom_bar(stat = "identity") +
-  labs(title = "Temporada de Reserva", x = "Mes", y = "Number of Bookings") +
+  labs(title = "Booking Seasonality", x = "Month", y = "Number of Bookings") +
   theme_minimal()
 ```
 
-#PREGUNTA 4
+#### 📉 Question 4: Lowest Demand Period
 ```R
 lowest_demand_month <- seasonality[which.min(seasonality$count), ]
 lowest_demand_month
 ```
 
-#PREGUNTA 5
+#### 👶 Question 5: Bookings with Children/Babies
 ```R
 children_bookings <- hotel_data %>%
   filter(children > 0 | babies > 0)
@@ -651,7 +415,7 @@ ggplot(children_bookings, aes(x = factor(children > 0, levels = c(TRUE, FALSE)),
   theme_minimal()
 ```
 
-#PREGUNTA 6
+#### 🚗 Question 6: Parking Space Importance
 ```R
 parking_spaces <- hotel_data %>%
   group_by(required_car_parking_spaces) %>%
@@ -663,7 +427,7 @@ ggplot(parking_spaces, aes(x = required_car_parking_spaces, y = count, fill = re
   theme_minimal()
 ```
 
-#PREGUNTA 7
+#### ❌ Question 7: Monthly Cancellations
 ```R
 hotel_data$arrival_date_month <- match(hotel_data$arrival_date_month, month.name)
 
@@ -676,44 +440,60 @@ cancellations <- hotel_data %>%
 
 ggplot(cancellations, aes(x = year_month, y = cancel_count)) +
   geom_bar(stat = "identity", fill = "red") +
-  labs(title = "Cancelaciones Mensuales", x = "Mes", y = "Número de Cancelaciones") +
+  labs(title = "Monthly Cancellations", x = "Month", y = "Number of Cancellations") +
   theme_minimal()
-
 ```
 
-## 7. Conclusiones <a name="data7"></a>
-A partir de los datos de reservas por tipo de hotel, podemos concluir que los hoteles urbanos (City hotels) tienden a ser más populares que los resorts. Esto podría deberse a varios factores, como la ubicación céntrica,
+---
 
-Al analizar la demanda de reservas a lo largo del tiempo, observamos que existe un aumento constante en las reservas de ambos tipos de hoteles, especialmente en los meses de vacaciones y eventos especiales.
+## 📊 Conclusions {#conclusions}
 
-Las temporadas altas coinciden con los meses de vacaciones (junio, julio y agosto) y eventos festivos importantes, donde se observan mayores volúmenes de reservas. 
+> ### 🏨 Hotel Type Analysis
+> Based on booking data by hotel type, we can conclude that **city hotels** tend to be more popular than resorts. This could be due to various factors such as central location, business travel convenience, and urban amenities.
 
-## 8. Recomendaciones <a name="data8"></a>
+> ### 📈 Demand Trends
+> When analyzing booking demand over time, we observe a **consistent increase** in bookings for both hotel types, especially during vacation months and special events.
 
-Implementar tarifas dinámicas ajustadas a la estacionalidad, la demanda y el tipo de habitación. Durante las temporadas bajas, ofrecer promociones y descuentos específicos podría incentivar las reservas, mientras que en temporadas altas
+> ### 🌞 Seasonal Patterns
+> **High seasons** coincide with vacation months (June, July, and August) and major festive events, where higher booking volumes are observed. This pattern provides valuable insights for revenue management strategies.
 
-Revisar las políticas de cancelación, especialmente en meses donde se detecta un mayor índice de cancelaciones. 
+---
 
-Crear programas de fidelización para premiar a los clientes recurrentes, brindándoles beneficios exclusivos como descuentos, mejoras de habitación, acceso a eventos o servicios personalizados.
+## 💡 Recommendations {#recommendations}
 
-Implementar una estrategia de mejora continua en la atención al cliente, basada en el análisis de las solicitudes especiales. Esto ayudará a personalizar la experiencia de cada huésped, mejorando la satisfacción y la retención.
+### 💰 Dynamic Pricing Strategy
+Implement **dynamic rates adjusted to seasonality, demand, and room type**. During low seasons, offering specific promotions and discounts could incentivize bookings, while premium pricing during high seasons can maximize revenue.
 
+### 📋 Cancellation Policy Review
+Review cancellation policies, especially in months where higher cancellation rates are detected. Consider implementing **more restrictive policies** during peak periods while maintaining flexibility during low-demand periods.
 
-## 9. Bibliografia <a name="data9"></a>
-Antonio, N., De Almeida, A., & Nunes, L. (2018). Hotel booking demand datasets. Data In Brief, 22, 41-49. https://doi.org/10.1016/j.dib.2018.11.126
+### 🌟 Customer Loyalty Programs
+Create **loyalty programs** to reward returning customers, providing exclusive benefits such as discounts, room upgrades, event access, or personalized services. This can significantly improve customer retention and lifetime value.
 
-Gabara, E. (2024, 18 julio). Lo que el rendimiento de las reservas de tu hotel puede decirte sobre los patrones de demanda. Cloudbeds. https://www.cloudbeds.com/es/articulos/patrones-demanda-hotelera/
+### 😊 Continuous Service Improvement
+Implement a **continuous improvement strategy** in customer service based on analysis of special requests. This will help personalize each guest's experience, improving satisfaction and retention rates.
 
-Internacional, S. (2024, 23 junio). Investigación de mercado hotelero. Investigación Internacional SIS. https://www.sisinternational.com/es/pericia/industrias/investigacion-de-mercado-hotelero/
-Antonio, N., De Almeida, A., & Nunes, L. (2018b). Hotel booking demand datasets. Data In Brief, 22, 41-49. https://doi.org/10.1016/j.dib.2018.11.126
+### 📊 Data-Driven Decision Making
+Establish regular **monitoring and analysis cycles** of booking patterns to quickly adapt to market changes and optimize operational strategies.
 
+---
 
-Internacional, S. (2024b, junio 23). Investigación de mercado hotelero. Investigación Internacional SIS. https://www.sisinternational.com/es/pericia/industrias/investigacion-de-mercado-hotelero/
+## 📚 Bibliography {#bibliography}
 
+- Antonio, N., De Almeida, A., & Nunes, L. (2018). Hotel booking demand datasets. *Data In Brief*, 22, 41-49. https://doi.org/10.1016/j.dib.2018.11.126
 
+- Gabara, E. (2024, July 18). What your hotel booking performance can tell you about demand patterns. *Cloudbeds*. https://www.cloudbeds.com/es/articulos/patrones-demanda-hotelera/
 
+- International, S. (2024, June 23). Hotel market research. *SIS International Research*. https://www.sisinternational.com/es/pericia/industrias/investigacion-de-mercado-hotelero/
 
+---
 
+<div align="center">
 
+### 📊 Analysis Complete
 
+*This report was generated as part of the CC216 coursework for exploratory data analysis in the hospitality industry.*
 
+**🔍 For more insights and detailed analysis, please refer to the complete dataset and R code implementations.**
+
+</div>
