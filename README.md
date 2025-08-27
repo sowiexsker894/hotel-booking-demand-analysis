@@ -495,5 +495,5 @@ Establish regular **monitoring and analysis cycles** of booking patterns to quic
 *This report was generated as part of the CC216 coursework for exploratory data analysis in the hospitality industry.*
 
 **🔍 For more insights and detailed analysis, please refer to the complete dataset and R code implementations.**
-
+Autor: Nicole Sihuincha
 </div>
