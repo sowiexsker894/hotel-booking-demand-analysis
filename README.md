@@ -18,7 +18,7 @@
 
 ---
 
-## 🎯 Introduction {#introduction}
+## 🎯 Introduction 
 
 <div align="center">
   
