@@ -1,20 +1,20 @@
-# 🏨 Hotel Booking Demand Analysis - EDA Report
+# Hotel Booking Demand Analysis - EDA Report
 
 > **A comprehensive exploratory data analysis of hotel booking demand patterns**
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
-1. [🎯 Introduction](#introduction)
-2. [🎯 Objectives](#objectives)
-3. [📊 Dataset Overview](#dataset-overview)
-4. [🔍 Case Study Analysis](#case-study-analysis)
-5. [📝 Dataset Variables](#dataset-variables)
-6. [📈 Exploratory Data Analysis](#exploratory-data-analysis)
-7. [📊 Conclusions](#conclusions)
-8. [💡 Recommendations](#recommendations)
-9. [📚 Bibliography](#bibliography)
+1. [Introduction](#introduction)
+2. [Objectives](#objectives)
+3. [Dataset Overview](#dataset-overview)
+4. [Case Study Analysis](#case-study-analysis)
+5. [Dataset Variables](#dataset-variables)
+6. [Exploratory Data Analysis](#exploratory-data-analysis)
+7. [Conclusions](#conclusions)
+8. [Recommendations](#recommendations)
+9. [Bibliography](#bibliography)
 
 ---
 
@@ -34,29 +34,29 @@ The research focuses on collecting and analyzing hotel booking data, enabling re
 
 ---
 
-## 🎯 Objectives {#objectives}
+## 🎯 Objectives 
 
-### 🌟 General Objectives
-- **📊 Conduct comprehensive EDA**: Perform exploratory data analysis of the dataset, generating visualizations, preparing data, and extracting initial conclusions using R/RStudio
-- **🔍 Explore consumer behavior**: Investigate different aspects of consumer behavior in the hotel sector
+### General Objectives
+- **Conduct comprehensive EDA**: Perform exploratory data analysis of the dataset, generating visualizations, preparing data, and extracting initial conclusions using R/RStudio
+- **Explore consumer behavior**: Investigate different aspects of consumer behavior in the hotel sector
 
 ### 🎯 Specific Objectives
-- **🤖 Develop prediction models**: Create models to classify the probability of hotel booking cancellations
+- **Develop prediction models**: Create models to classify the probability of hotel booking cancellations
 
 ---
 
-## 📊 Dataset Overview {#dataset-overview}
+## 📊 Dataset Overview
 
 <div align="center">
 
-### 📈 Dataset Statistics
+### Dataset Statistics
 
 | Metric | Value |
 |--------|--------|
-| 📝 **Total Records** | 119,390 |
-| 📋 **Variables** | 32 |
-| 🏨 **Hotel Types** | Resort & City Hotels |
-| 📅 **Time Period** | July 1, 2015 - August 31, 2017 |
+| **Total Records** | 119,390 |
+| **Variables** | 32 |
+| **Hotel Types** | Resort & City Hotels |
+| **Time Period** | July 1, 2015 - August 31, 2017 |
 
 </div>
 
@@ -70,7 +70,7 @@ The dataset contains **119,390 records** and **32 variables** sourced from Scien
 
 ---
 
-## 🔍 Case Study Analysis {#case-study-analysis}
+## 🔍 Case Study Analysis
 
 ### 📚 Data Origin
 - **👥 Authors**: Antonio Nuno de Almeida, Ana Nunes, and Luis
@@ -85,79 +85,79 @@ The data originates from queries made to the hotels' Property Management System 
 
 | Stakeholder | Application |
 |-------------|-------------|
-| 🏨 **Hotel Chains** | Portfolio optimization, customer satisfaction improvement, market expansion |
-| 🏠 **Independent Hotels** | Niche opportunities, service differentiation |
-| 🎓 **Academic Researchers** | Consumer behavior studies in tourism and hotel management |
-| 🌍 **Tourism Organizations** | Understanding tourist flow and policy development |
+| **Hotel Chains** | Portfolio optimization, customer satisfaction improvement, market expansion |
+| **Independent Hotels** | Niche opportunities, service differentiation |
+| **Academic Researchers** | Consumer behavior studies in tourism and hotel management |
+| **Tourism Organizations** | Understanding tourist flow and policy development |
 
 ### 💼 Business Problems Addressed
 
-- **💰 Improve hotel profitability** through dynamic pricing strategies and promotions during low seasons
-- **😊 Enhance customer experience** with personalized services for returning customers  
-- **📊 Optimize revenue fluctuation** with appropriate marketing strategies for low-activity periods
+- **Improve hotel profitability** through dynamic pricing strategies and promotions during low seasons
+- **Enhance customer experience** with personalized services for returning customers  
+- **Optimize revenue fluctuation** with appropriate marketing strategies for low-activity periods
 
 ### 💡 Key Insights
 
-> 🔍 **Cancellation Patterns**: High or low cancellation rates could indicate business problems. Potential factors include climate changes, high vacation seasons, overly flexible cancellation policies.
+> **Cancellation Patterns**: High or low cancellation rates could indicate business problems. Potential factors include climate changes, high vacation seasons, overly flexible cancellation policies.
 
-> 💲 **Dynamic Pricing Strategy**: Hotels should implement pricing strategies considering both seasonality and room type, offering discounts or special packages during high seasons for less visited rooms.
+> **Dynamic Pricing Strategy**: Hotels should implement pricing strategies considering both seasonality and room type, offering discounts or special packages during high seasons for less visited rooms.
 
-> 📈 **Seasonality Analysis**: Seasonality relates to both room types and seasons, allowing for price increases during high-demand periods.
+> **Seasonality Analysis**: Seasonality relates to both room types and seasons, allowing for price increases during high-demand periods.
 
-> 🌟 **Customer Loyalty**: Due to the existence of new and repeat customers, special services could be created for returning guests - premium access to hotel events, coupons, or visit credits.
+> **Customer Loyalty**: Due to the existence of new and repeat customers, special services could be created for returning guests - premium access to hotel events, coupons, or visit credits.
 
 ### ❓ Key Analysis Questions
 
-- 🏨 How many bookings are made by hotel type?
-- 📈 Is demand increasing over time?
-- 🌡️ What are the high and low demand seasons?
-- 👶 How many bookings include children and/or babies?
-- 🚗 Is parking space availability important?
-- 📅 In which months are most booking cancellations made?
+- How many bookings are made by hotel type?
+- Is demand increasing over time?
+- What are the high and low demand seasons?
+- How many bookings include children and/or babies?
+- Is parking space availability important?
+- In which months are most booking cancellations made?
 
 ---
 
-## 📝 Dataset Variables {#dataset-variables}
+## 📝 Dataset Variables
 
 <div align="center">
 
-### 📊 Variable Dictionary
+### Variable Dictionary
 
 </div>
 
 | Variable | Type | Description |
 |----------|------|-------------|
-| 🏨 `hotel` | Categorical | Hotel Type (Resort - City) |
-| ❌ `is_canceled` | Numeric | Indicates if booking was canceled (1 Yes / 0 No) |
-| ⏰ `lead_time` | Numeric | Days between booking and arrival |
-| 📅 `arrival_date_year` | Numeric | Year of arrival date |
-| 📆 `arrival_date_month` | Categorical | Month of arrival date |
-| 📊 `arrival_date_week_number` | Numeric | Week number of arrival year |
-| 📋 `arrival_date_day_of_month` | Numeric | Day of month of arrival |
-| 🌙 `stays_in_weekend_nights` | Numeric | Number of weekend nights stayed |
-| 🌞 `stays_in_week_nights` | Numeric | Number of weekday nights stayed |
-| 👨‍👩‍👧‍👦 `adults` | Numeric | Number of adults in booking |
-| 👶 `children` | Numeric | Number of children in booking |
-| 🍼 `babies` | Numeric | Number of babies in booking |
-| 🍽️ `meal` | Categorical | Type of meal booked |
-| 🌍 `country` | Categorical | Customer's country |
-| 📈 `market_segment` | Categorical | Market segment of booking |
-| 📡 `distribution_channel` | Categorical | Booking distribution channel |
-| 🔄 `is_repeated_guest` | Numeric | Indicates if returning guest |
-| ❌ `previous_cancellations` | Numeric | Number of previous canceled bookings |
-| 🏠 `reserved_room_type` | Categorical | Reserved room type |
-| 🏠 `assigned_room_type` | Categorical | Assigned room type |
-| 🔄 `booking_changes` | Numeric | Number of booking changes |
-| 💰 `deposit_type` | Categorical | Deposit type (No Deposit, Non Refund, Refundable) |
-| 👤 `agent` | Numeric | ID of booking agent |
-| 🏢 `company` | Numeric | ID of managing company |
-| ⏳ `days_in_waiting_list` | Numeric | Days on waiting list |
-| 👥 `customer_type` | Categorical | Customer type |
-| 💵 `adr` | Numeric | Average Daily Rate |
-| 🚗 `required_car_parking_spaces` | Numeric | Number of required parking spaces |
-| ⭐ `total_of_special_requests` | Numeric | Number of special requests |
-| 📋 `reservation_status` | Categorical | Reservation status (Check-Out, Canceled, No-Show) |
-| 📅 `reservation_status_date` | Date | Reservation status date |
+| `hotel` | Categorical | Hotel Type (Resort - City) |
+| `is_canceled` | Numeric | Indicates if booking was canceled (1 Yes / 0 No) |
+| `lead_time` | Numeric | Days between booking and arrival |
+| `arrival_date_year` | Numeric | Year of arrival date |
+| `arrival_date_month` | Categorical | Month of arrival date |
+| `arrival_date_week_number` | Numeric | Week number of arrival year |
+| `arrival_date_day_of_month` | Numeric | Day of month of arrival |
+| `stays_in_weekend_nights` | Numeric | Number of weekend nights stayed |
+| `stays_in_week_nights` | Numeric | Number of weekday nights stayed |
+| `adults` | Numeric | Number of adults in booking |
+| `children` | Numeric | Number of children in booking |
+| `babies` | Numeric | Number of babies in booking |
+| `meal` | Categorical | Type of meal booked |
+| `country` | Categorical | Customer's country |
+| `market_segment` | Categorical | Market segment of booking |
+| `distribution_channel` | Categorical | Booking distribution channel |
+| `is_repeated_guest` | Numeric | Indicates if returning guest |
+| `previous_cancellations` | Numeric | Number of previous canceled bookings |
+| `reserved_room_type` | Categorical | Reserved room type |
+| `assigned_room_type` | Categorical | Assigned room type |
+| `booking_changes` | Numeric | Number of booking changes |
+| `deposit_type` | Categorical | Deposit type (No Deposit, Non Refund, Refundable) |
+| `agent` | Numeric | ID of booking agent |
+| `company` | Numeric | ID of managing company |
+| `days_in_waiting_list` | Numeric | Days on waiting list |
+| `customer_type` | Categorical | Customer type |
+| `adr` | Numeric | Average Daily Rate |
+| `required_car_parking_spaces` | Numeric | Number of required parking spaces |
+| `total_of_special_requests` | Numeric | Number of special requests |
+| `reservation_status` | Categorical | Reservation status (Check-Out, Canceled, No-Show) |
+| `reservation_status_date` | Date | Reservation status date |
 
 ---
 
@@ -255,7 +255,7 @@ str(datahotel)
  $ reservation_status_date       : chr  "2015-07-01" "2015-07-01" "2015-07-02" "2015-07-02" ...
 ```
 
-### 🧹 Data Processing
+### Data Processing
 
 #### Missing Data Identification
 ```R
@@ -346,9 +346,9 @@ dataset_clean$adr[dataset_clean$adr > upper_bound] <- upper_bound
 boxplot(dataset_clean$adr, main = "Box Plot - ADR (After Winsorization)")
 ```
 
-### 📊 Data Visualization
+### Data Visualization
 
-#### 🏨 Question 1: Bookings by Hotel Type
+#### Question 1: Bookings by Hotel Type
 ```R
 hotel_count <- hotel_data %>%
   group_by(hotel) %>%
@@ -360,7 +360,7 @@ ggplot(hotel_count, aes(x = hotel, y = count, fill = hotel)) +
   theme_minimal()
 ```
 
-#### 📈 Question 2: Demand Over Time
+#### Question 2: Demand Over Time
 ```R
 # Convert month name to number if necessary
 hotel_data$arrival_date_month <- match(hotel_data$arrival_date_month, month.name)
@@ -383,7 +383,7 @@ ggplot(demand_over_time, aes(x = year_month, y = count)) +
   theme_minimal()
 ```
 
-#### 🌡️ Question 3: Seasonal Patterns
+#### Question 3: Seasonal Patterns
 ```R
 seasonality <- hotel_data %>%
   group_by(arrival_date_month) %>%
@@ -396,13 +396,13 @@ ggplot(seasonality, aes(x = factor(arrival_date_month, levels = month.name), y =
   theme_minimal()
 ```
 
-#### 📉 Question 4: Lowest Demand Period
+#### Question 4: Lowest Demand Period
 ```R
 lowest_demand_month <- seasonality[which.min(seasonality$count), ]
 lowest_demand_month
 ```
 
-#### 👶 Question 5: Bookings with Children/Babies
+#### Question 5: Bookings with Children/Babies
 ```R
 children_bookings <- hotel_data %>%
   filter(children > 0 | babies > 0)
@@ -415,7 +415,7 @@ ggplot(children_bookings, aes(x = factor(children > 0, levels = c(TRUE, FALSE)),
   theme_minimal()
 ```
 
-#### 🚗 Question 6: Parking Space Importance
+#### Question 6: Parking Space Importance
 ```R
 parking_spaces <- hotel_data %>%
   group_by(required_car_parking_spaces) %>%
@@ -427,7 +427,7 @@ ggplot(parking_spaces, aes(x = required_car_parking_spaces, y = count, fill = re
   theme_minimal()
 ```
 
-#### ❌ Question 7: Monthly Cancellations
+#### Question 7: Monthly Cancellations
 ```R
 hotel_data$arrival_date_month <- match(hotel_data$arrival_date_month, month.name)
 
@@ -448,37 +448,37 @@ ggplot(cancellations, aes(x = year_month, y = cancel_count)) +
 
 ## 📊 Conclusions {#conclusions}
 
-> ### 🏨 Hotel Type Analysis
+> ### Hotel Type Analysis
 > Based on booking data by hotel type, we can conclude that **city hotels** tend to be more popular than resorts. This could be due to various factors such as central location, business travel convenience, and urban amenities.
 
-> ### 📈 Demand Trends
+> ### Demand Trends
 > When analyzing booking demand over time, we observe a **consistent increase** in bookings for both hotel types, especially during vacation months and special events.
 
-> ### 🌞 Seasonal Patterns
+> ### Seasonal Patterns
 > **High seasons** coincide with vacation months (June, July, and August) and major festive events, where higher booking volumes are observed. This pattern provides valuable insights for revenue management strategies.
 
 ---
 
 ## 💡 Recommendations {#recommendations}
 
-### 💰 Dynamic Pricing Strategy
+### Dynamic Pricing Strategy
 Implement **dynamic rates adjusted to seasonality, demand, and room type**. During low seasons, offering specific promotions and discounts could incentivize bookings, while premium pricing during high seasons can maximize revenue.
 
-### 📋 Cancellation Policy Review
+### Cancellation Policy Review
 Review cancellation policies, especially in months where higher cancellation rates are detected. Consider implementing **more restrictive policies** during peak periods while maintaining flexibility during low-demand periods.
 
-### 🌟 Customer Loyalty Programs
+### Customer Loyalty Programs
 Create **loyalty programs** to reward returning customers, providing exclusive benefits such as discounts, room upgrades, event access, or personalized services. This can significantly improve customer retention and lifetime value.
 
-### 😊 Continuous Service Improvement
+### Continuous Service Improvement
 Implement a **continuous improvement strategy** in customer service based on analysis of special requests. This will help personalize each guest's experience, improving satisfaction and retention rates.
 
-### 📊 Data-Driven Decision Making
+### Data-Driven Decision Making
 Establish regular **monitoring and analysis cycles** of booking patterns to quickly adapt to market changes and optimize operational strategies.
 
 ---
 
-## 📚 Bibliography {#bibliography}
+## Bibliography 
 
 - Antonio, N., De Almeida, A., & Nunes, L. (2018). Hotel booking demand datasets. *Data In Brief*, 22, 41-49. https://doi.org/10.1016/j.dib.2018.11.126
 
@@ -490,7 +490,7 @@ Establish regular **monitoring and analysis cycles** of booking patterns to quic
 
 <div align="center">
 
-### 📊 Analysis Complete
+### Analysis Complete
 
 *This report was generated as part of the CC216 coursework for exploratory data analysis in the hospitality industry.*
 
